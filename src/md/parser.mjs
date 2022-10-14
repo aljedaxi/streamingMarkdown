@@ -818,7 +818,7 @@ function parse_blocks(string, options = {}) {
 	return blocks.map(block => parse_block(block, options));
 }
 
-export function parse_blocks_generator*(string, options = {}) {
+export const parse_blocks_generator = function*(string, options = {}) {
 	options = merge_objects(DEFAULT_OPTIONS, options);
 	const blocks = group_blocks(string, options);
 	for (const block of blocks) {
